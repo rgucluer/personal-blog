@@ -24,14 +24,6 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
             url: '/posts',
           },
         },
-        {
-          link: {
-            type: 'custom',
-            appearance: 'outline',
-            label: 'Contact',
-            url: '/contact',
-          },
-        },
       ],
       media: heroImage.id,
       richText: {

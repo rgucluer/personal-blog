@@ -1,6 +1,9 @@
 # personal-blog Payload Template
 
-This is a modified version or [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website) . The aim of this template is to work with a Coolify project. Follow steps in [personal-blog](https://github.com/rgucluer/personal-blog-docs) to implement Payload CMS Website template on Coolify instance.
+This is a modified version or [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website) .
+The aim of this template is to work with a Coolify project. 
+Follow steps in [personal-blog](https://github.com/rgucluer/personal-blog-docs) to implement 
+Payload CMS Website template on Coolify instance.
 
 ## Self Host a Payload CMS Application with Coolify
 
@@ -20,6 +23,4 @@ Steps to uninstall Coolify.
 Copyright 2026 Recep GÜÇLÜER rgucluer@gmail.com
 
 personal-blog is [MIT licensed](LICENSE.md) .
-
-
 

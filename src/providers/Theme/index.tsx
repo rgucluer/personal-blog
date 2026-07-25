@@ -10,7 +10,7 @@ import { themeIsValid } from './types'
 
 const initialContext: ThemeContextType = {
   setTheme: () => null,
-  theme: 'dark',
+  theme: undefined,
 }
 
 const ThemeContext = createContext(initialContext)
@@ -45,9 +45,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       if (implicitPreference) {
         themeToSet = implicitPreference
       }
-    } 
+    }
 
-    window.localStorage.setItem(themeLocalStorageKey, themeToSet)
     document.documentElement.setAttribute('data-theme', themeToSet)
     setThemeState(themeToSet)
   }, [])

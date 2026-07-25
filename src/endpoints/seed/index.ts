@@ -3,7 +3,6 @@ import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest, File } from '
 import { home } from './home'
 import { image1 } from './image-1'
 import { image2 } from './image-2'
-import { image3 } from './image-3'
 import { imageHero1 } from './image-hero-1'
 import { post1 } from './post-1'
 import { post2 } from './post-2'
@@ -118,7 +117,7 @@ export const seed = async ({
     }),
     payload.create({
       collection: 'media',
-      data: image3,
+      data: image2,
       file: image3Buffer,
     }),
     payload.create({
@@ -197,7 +196,7 @@ export const seed = async ({
     payload.create({
       collection: 'pages',
       depth: 0,
-      data: home({ heroImage: imageHomeDoc, metaImage: image1Doc }),
+      data: home({ heroImage: imageHomeDoc, metaImage: image2Doc }),
     }),
 
   ])
@@ -226,9 +225,16 @@ export const seed = async ({
           {
             link: {
               type: 'custom',
+              label: 'Admin',
+              url: '/admin',
+            },
+          },
+          {
+            link: {
+              type: 'custom',
               label: 'Source Code',
               newTab: true,
-              url: 'https://github.com/rgucluer/cpm-cms',
+              url: 'https://github.com/payloadcms/payload/tree/3.x/templates/website',
             },
           },
           {

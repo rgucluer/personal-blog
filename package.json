@@ -1,6 +1,6 @@
 {
   "name": "personal-blog",
-  "version": "0.2.10-dev.build.3",
+  "version": "0.2.10",
   "description": "Website template for Payload",
   "license": "MIT",
   "type": "module",

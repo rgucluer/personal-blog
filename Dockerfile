@@ -1,7 +1,7 @@
 # To use this Dockerfile, you have to set `output: 'standalone'` in your next.config.js file.
 # From https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile
 
-ARG NODE_VERSION=24.18-alpine
+ARG NODE_VERSION=22.23.2-alpine
 
 FROM node:${NODE_VERSION} AS base 
 

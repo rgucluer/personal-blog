@@ -1,26 +1,28 @@
 # personal-blog Payload Template
 
-This is a modified version or [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website) .
+This is a modified version or [Payload Website Template](https://github.com/payloadcms/payload/tree/v3.86.0/templates/website) .
 The aim of this template is to work with a Coolify project. 
-Follow steps in [rgucluer/personal-blog-docs](https://github.com/rgucluer/personal-blog-docs) to implement 
-Payload CMS Website template on Coolify instance.
 
 ## Self Host a Payload CMS Application with Coolify
 
-### [Development Environment](https://github.com/rgucluer/personal-blog-docs/docs/development.md)
-Run Coolify in a Virtual Machine.
-
-### [Production Environment](https://github.com/rgucluer/personal-blog-docs/docs/production.md)
-Run Coolify on a Virtual Private Server.
-
-### [Uninstall Coolify](https://github.com/rgucluer/personal-blog-docs/docs/coolify/uninstall-coolify.md)
-Steps to uninstall Coolify.
+Read the docs: [rgucluer/personal-blog-docs](https://github.com/rgucluer/personal-blog-docs)
 
 -----
 
 ## LICENSE
 
-Copyright 2026 Recep GÜÇLÜER rgucluer@gmail.com
+Copyright 2026 Recep GÜÇLÜER `rgucluer@gmail.com`
 
 personal-blog is [MIT licensed](LICENSE.md) .
 
+https://github.com/rgucluer/personal-blog-docs
+
+https://github.com/rgucluer/personal-blog
+
+---
+
+### Notice
+
+Trademarks Policy
+
+The respective trademarks mentioned here are owned by the respective companies, and use of them does not imply any affiliation or endorsement.

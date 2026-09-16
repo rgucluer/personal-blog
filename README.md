@@ -1,6 +1,6 @@
 # personal-blog Payload Template
 
-This is a modified version or [Payload Website Template](https://github.com/payloadcms/payload/tree/v3.86.0/templates/website) .
+This is a modified version of [Payload Website Template](https://github.com/payloadcms/payload/tree/v3.86.0/templates/website) .
 The aim of this template is to work with a Coolify project. 
 
 ## Self Host a Payload CMS Application with Coolify

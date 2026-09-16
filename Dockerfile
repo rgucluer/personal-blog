@@ -3,7 +3,7 @@
 
 ARG NODE_VERSION=22.23.2-alpine
 
-FROM node:${NODE_VERSION} AS base 
+FROM node:${NODE_VERSION} AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -13,7 +13,7 @@ WORKDIR /app
 
 RUN corepack enable
 
-# Install dependencies based on the preferred package manager
+# Install dependencies
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml ./
 
 # Install project dependencies with frozen lockfile for reproducible builds
@@ -53,5 +53,3 @@ COPY --chown=node:node --chmod=744 ./after-deploy.sh ./
 EXPOSE 3000
 
 ENV PORT 3000
-
-

@@ -4,7 +4,7 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     pull_policy: build
-    image: custom-payload-website:3.88.0-build.2
+    image: custom-payload-website:3.88.0-build.3
     build:
       context: .
       dockerfile: Dockerfile
@@ -35,5 +35,3 @@ services:
       traefik.enable: true
       coolify.managed: true
       coolify.proxy: true
-
-

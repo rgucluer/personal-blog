@@ -12,6 +12,7 @@ const collections: CollectionSlug[] = [
   'categories',
   'media',
   'pages',
+  'writers',
   'posts',
   'forms',
   'form-submissions',
@@ -67,14 +68,14 @@ export const seed = async ({
       .map((collection) => payload.db.deleteVersions({ collection, req, where: {} })),
   )
 
-  payload.logger.info(`— Seeding demo author and user...`)
+  payload.logger.info(`— Seeding demo writer ...`)
 
   await payload.delete({
-    collection: 'users',
+    collection: 'writers',
     depth: 0,
     where: {
-      email: {
-        equals: 'demo-author@example.com',
+      slug: {
+        equals: 'demo-author',
       },
     },
   })
@@ -96,14 +97,14 @@ export const seed = async ({
     ),
   ])
 
-  const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
+  const [demoWriter, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
     payload.create({
-      collection: 'users',
+      collection: 'writers',
       data: {
-        name: 'Demo Author',
-        email: 'demo-author@example.com',
-        password: 'password',
+        name: 'Demo Writer',
+        slug: 'demo-writer',
       },
+      draft: true,
     }),
     payload.create({
       collection: 'media',
@@ -146,7 +147,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post1({ heroImage: image1Doc, blockImage: image2Doc, author: demoAuthor }),
+    data: post1({ heroImage: image1Doc, blockImage: image2Doc, writer: demoWriter }),
   })
 
   const post2Doc = await payload.create({
@@ -155,7 +156,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post2({ heroImage: image2Doc, blockImage: image3Doc, author: demoAuthor }),
+    data: post2({ heroImage: image2Doc, blockImage: image3Doc, writer: demoWriter }),
   })
 
   const post3Doc = await payload.create({
@@ -164,7 +165,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post3({ heroImage: image3Doc, blockImage: image1Doc, author: demoAuthor }),
+    data: post3({ heroImage: image3Doc, blockImage: image1Doc, writer: demoWriter }),
   })
 
   // update each post with related posts
@@ -192,13 +193,12 @@ export const seed = async ({
 
   payload.logger.info(`— Seeding pages...`)
 
-  const [_, ] = await Promise.all([
+  const [_] = await Promise.all([
     payload.create({
       collection: 'pages',
       depth: 0,
       data: home({ heroImage: imageHomeDoc, metaImage: image2Doc }),
     }),
-
   ])
 
   payload.logger.info(`— Seeding globals...`)
@@ -222,6 +222,13 @@ export const seed = async ({
       slug: 'footer',
       data: {
         navItems: [
+          {
+            link: {
+              type: 'custom',
+              label: 'Writers',
+              url: '/writers',
+            },
+          },
           {
             link: {
               type: 'custom',

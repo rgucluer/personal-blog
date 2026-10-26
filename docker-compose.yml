@@ -4,7 +4,7 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     pull_policy: build
-    image: custom-payload-website:3.90.2-build.3
+    image: custom-payload-website:3.92.0-build.1
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
       retries: 5
       start_period: 20s
     expose:
-      - 3000 
+      - 3000
     working_dir: /home/node/app/
     # command: 'sh -c "node server.js"'
     # command: 'sh -c "tail -f /dev/null"'

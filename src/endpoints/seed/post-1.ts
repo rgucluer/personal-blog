@@ -1,21 +1,21 @@
-import type { Media, User } from '@/payload-types'
+import type { Media, Writer } from '@/payload-types'
 import { RequiredDataFromCollectionSlug } from 'payload'
 
 export type PostArgs = {
   heroImage: Media
   blockImage: Media
-  author: User
+  writer: Writer
 }
 
 export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> = ({
   heroImage,
   blockImage,
-  author,
+  writer,
 }) => {
   return {
     slug: 'digital-horizons',
     _status: 'published',
-    authors: [author],
+    writers: [writer],
     content: {
       root: {
         type: 'root',
@@ -78,7 +78,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                               format: 0,
                               mode: 'normal',
                               style: '',
-                              text: 'navigate to the admin dashboard',
+                              text: 'navigate to the admin dashboard.',
                               version: 1,
                             },
                           ],
@@ -92,20 +92,11 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
                           indent: 0,
                           version: 3,
                         },
-                        {
-                          type: 'text',
-                          detail: 0,
-                          format: 0,
-                          mode: 'normal',
-                          style: '',
-                          text: '.',
-                          version: 1,
-                        },
                       ],
                       direction: 'ltr',
                       format: '',
                       indent: 0,
-                      textFormat: 0,
+                      textFormat: 1,
                       version: 1,
                     },
                   ],

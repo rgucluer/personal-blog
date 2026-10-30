@@ -90,7 +90,7 @@ See the [Globals](https://payloadcms.com/docs/configuration/globals) docs for de
 
 ## Access control
 
-Basic access control is setup to limit access to various content based based on publishing status.
+Basic access control is setup to limit access to various content based on publishing status.
 
 - `users`: Users can access the admin panel and create or edit content.
 - `posts`: Everyone can access published posts, but only users can create, update, or delete them.

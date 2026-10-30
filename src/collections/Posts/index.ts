@@ -15,7 +15,7 @@ import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
-import { populateAuthors } from './hooks/populateAuthors'
+import { populateWriters } from './hooks/populateWriters'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 
 import {
@@ -147,7 +147,6 @@ export const Posts: CollectionConfig<'posts'> = {
             MetaImageField({
               relationTo: 'media',
             }),
-
             MetaDescriptionField({}),
             PreviewField({
               // if the `generateUrl` function is configured
@@ -182,19 +181,19 @@ export const Posts: CollectionConfig<'posts'> = {
       },
     },
     {
-      name: 'authors',
+      name: 'writers',
       type: 'relationship',
       admin: {
         position: 'sidebar',
       },
       hasMany: true,
-      relationTo: 'users',
+      relationTo: 'writers',
     },
-    // This field is only used to populate the user data via the `populateAuthors` hook
+    // This field is only used to populate the user data via the `populateWriters` hook
     // This is because the `user` collection has access control locked to protect user privacy
     // GraphQL will also not return mutated user data that differs from the underlying schema
     {
-      name: 'populatedAuthors',
+      name: 'populatedWriters',
       type: 'array',
       access: {
         update: () => false,
@@ -218,7 +217,7 @@ export const Posts: CollectionConfig<'posts'> = {
   ],
   hooks: {
     afterChange: [revalidatePost],
-    afterRead: [populateAuthors],
+    afterRead: [populateWriters],
     afterDelete: [revalidateDelete],
   },
   versions: {
